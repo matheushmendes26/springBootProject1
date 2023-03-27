@@ -8,6 +8,8 @@ import lombok.Setter;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -25,6 +27,13 @@ public class User implements Serializable {
     private String email;
     private String phone;
     private String password;
+
+    @OneToMany
+    private List<Order> orders = new ArrayList<>();
+
+    public List<Order> getOrders() {
+        return orders;
+    }
 
     public User(){}
 
