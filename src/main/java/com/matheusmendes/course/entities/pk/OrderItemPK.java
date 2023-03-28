@@ -15,7 +15,6 @@ import java.io.Serializable;
 @Getter
 @Setter
 @EqualsAndHashCode
-
 public class OrderItemPK implements Serializable {
     private static final long serialVersionUID = 1L;
 
