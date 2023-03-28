@@ -13,6 +13,7 @@ import java.time.Instant;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 
 @Entity
+@Table(name = "tb_order")
 public class Order implements Serializable {
     private static final long serialVersionUID = 1L;
     //Implementation of attributes
@@ -23,6 +24,7 @@ public class Order implements Serializable {
     private Instant date;
     //Implementation of associations
     @ManyToOne
+    @JoinColumn(name = "client_id")
     private User client;
 
     public Order(){}
