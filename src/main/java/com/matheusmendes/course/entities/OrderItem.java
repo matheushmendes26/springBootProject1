@@ -1,5 +1,6 @@
 package com.matheusmendes.course.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.matheusmendes.course.entities.pk.OrderItemPK;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -21,7 +22,7 @@ public class OrderItem implements Serializable {
     @Getter(AccessLevel.NONE)
     @Setter(AccessLevel.NONE)
     @EmbeddedId
-    private OrderItemPK id;
+    private OrderItemPK id = new OrderItemPK();
     private Integer quantity;
     private Double price;
 
@@ -34,6 +35,8 @@ public class OrderItem implements Serializable {
         this.quantity = quantity;
         this.price = price;
     }
+
+    @JsonIgnore
     public Order getOrder(){
         return id.getOrder();
     }
