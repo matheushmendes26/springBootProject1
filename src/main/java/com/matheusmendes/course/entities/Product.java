@@ -48,7 +48,10 @@ public class Product implements Serializable {
         this.imgUrl = imgUrl;
     }
 
-    @JsonIgnore
+    public Set<Category> getCategories() {
+        return categories;
+    }
+
     public Set<Order> getOrders() {
         Set<Order> set = new HashSet<>();
         for (OrderItem x : items) {
