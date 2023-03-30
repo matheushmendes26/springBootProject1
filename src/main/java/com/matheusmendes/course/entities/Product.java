@@ -51,6 +51,7 @@ public class Product implements Serializable {
     public Set<Category> getCategories() {
         return categories;
     }
+
     @JsonIgnore
     public Set<Order> getItems() {
         Set<Order> set = new HashSet<>();
