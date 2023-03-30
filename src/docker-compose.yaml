@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  postgresql:
+    container_name: 'postgres_local'
+    image: bitnami/postgresql:14.7.0-debian-11-r10
+    environment:
+      POSTGRESQL_USERNAME: admin
+      POSTGRESQL_PASSWORD: password
+      POSTGRESQL_DATABASE: sblocal
+#    volumes:
+#      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+#    restart: always
